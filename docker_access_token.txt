@@ -1,0 +1,3 @@
+Login from Docker CLI Client
+1. docker login -u rambasnet
+2. passcode: dckr_pat_H1A-VxkuFYbCXPgHeNSOOWTTiZA
