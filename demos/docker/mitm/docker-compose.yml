@@ -1,5 +1,3 @@
-version: "3"
-
 services:
     attacker:
         image: handsonsecurity/seed-ubuntu:large
@@ -28,6 +26,8 @@ services:
                       /bin/services.sh &&
                       tail -f /dev/null
                  "
+        ports:
+            - "80:80"
 
     client:
         image: handsonsecurity/seed-ubuntu:large
