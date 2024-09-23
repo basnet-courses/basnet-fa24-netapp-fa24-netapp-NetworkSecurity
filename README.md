@@ -27,4 +27,4 @@ jupyter server list
 
 - Open browser and go to: [http://127.0.0.1:8888/](http://127.0.0.1:8888/)
 - Copy and paste authentication token
-- Open 00-TableOfContents.ipynb chapter and access all the notebooks
+- Open course/notebooks/00-TableOfContents.ipynb chapter and access all the notebooks
