@@ -14,7 +14,7 @@ Some of the contents are based on:
 - Docker
 - Docker compose
 
-## Run Notebooks in Docker Image
+## Run Jupyter Notebook in Docker Container
 
 ```bash
 cd <cloned_repo>
