@@ -1,6 +1,6 @@
 # Network Security
 
-Jupyter Notebooks for learning network-based exploitations, network utility tools and scapy library - a powerful interactive packet manipulation program for Python.
+Jupyter Notebooks for learning network security, network utility tools and scapy library - a powerful interactive packet manipulation program for Python.
 
 Some of the contents are based on:
 

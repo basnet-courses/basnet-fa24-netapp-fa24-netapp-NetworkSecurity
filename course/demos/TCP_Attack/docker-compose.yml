@@ -3,7 +3,8 @@ version: "3"
 services:
   attacker:
     image: handsonsecurity/seed-ubuntu:large
-    container_name: seed-attacker
+    container_name: attacker
+    hostname: attacker
     tty: true
     cap_add:
       - ALL
@@ -12,16 +13,20 @@ services:
       - ./volumes:/volumes
     network_mode: host
 
-  Victim:
+  server:
     image: handsonsecurity/seed-ubuntu:large
-    container_name: victim-10.9.0.5
+    container_name: server
+    hostname: server
     tty: true
     cap_add:
       - ALL
     privileged: true
+    volumes:
+      - ./volumes:/volumes
     sysctls:
       - net.ipv4.tcp_syncookies=0
-
+      - net.ipv4.tcp_max_syn_backlog=64
+      - net.ipv4.tcp_synack_retries=100
     networks:
       net-10.9.0.0:
         ipv4_address: 10.9.0.5
@@ -30,9 +35,10 @@ services:
       /etc/init.d/openbsd-inetd start  &&
       tail -f /dev/null"
 
-  User1:
+  user1:
     image: handsonsecurity/seed-ubuntu:large
-    container_name: user1-10.9.0.6
+    container_name: user1
+    hostname: user1
     tty: true
     cap_add:
       - ALL
@@ -44,9 +50,10 @@ services:
       /etc/init.d/openbsd-inetd start  &&
       tail -f /dev/null"
 
-  User2:
+  user2:
     image: handsonsecurity/seed-ubuntu:large
-    container_name: user2-10.9.0.7
+    container_name: user2
+    hostname: user2
     tty: true
     cap_add:
       - ALL
