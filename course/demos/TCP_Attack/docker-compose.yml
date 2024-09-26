@@ -65,6 +65,17 @@ services:
       /etc/init.d/openbsd-inetd start  &&
       tail -f /dev/null"
 
+  firefox:
+    image: jlesage/firefox
+    container_name: firefox
+    hostname: firefox
+    restart: always
+    ports:
+      - "5800:5800"
+    networks:
+      net-10.9.0.0:
+        ipv4_address: 10.9.0.10
+
 networks:
   net-10.9.0.0:
     name: net-10.9.0.0
