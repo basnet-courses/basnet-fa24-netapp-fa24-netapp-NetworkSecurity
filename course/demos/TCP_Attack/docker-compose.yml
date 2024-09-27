@@ -30,8 +30,7 @@ services:
     networks:
       net-10.9.0.0:
         ipv4_address: 10.9.0.5
-
-    command: bash -c "
+    command: bash -c "echo 'Some secret data' > /home/seed/secret.txt &&
       /etc/init.d/openbsd-inetd start  &&
       tail -f /dev/null"
 
